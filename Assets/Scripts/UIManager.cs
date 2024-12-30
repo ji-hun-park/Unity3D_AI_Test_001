@@ -32,6 +32,8 @@ public class UIManager : MonoBehaviour
         if (canvas != null)
         {
             FindAlertUI();
+            FindNPCUI();
+            FindQuestionUI();
         }
     }
 
@@ -44,6 +46,36 @@ public class UIManager : MonoBehaviour
             Debug.Log("찾은 오브젝트: " + target.name);
             UIList.Add(target.GetComponent<RectTransform>());
             AltUI = target.GetComponent<AlertUI>();
+        }
+        else
+        {
+            Debug.Log("오브젝트를 찾을 수 없습니다.");
+        }
+    }
+    
+    private void FindNPCUI()
+    {
+        Transform target = FindChildByName(canvas.transform, "NPCUI");
+
+        if (target != null)
+        {
+            Debug.Log("찾은 오브젝트: " + target.name);
+            UIList.Add(target.GetComponent<RectTransform>());
+        }
+        else
+        {
+            Debug.Log("오브젝트를 찾을 수 없습니다.");
+        }
+    }
+    
+    private void FindQuestionUI()
+    {
+        Transform target = FindChildByName(canvas.transform, "QuestionUI");
+
+        if (target != null)
+        {
+            Debug.Log("찾은 오브젝트: " + target.name);
+            UIList.Add(target.GetComponent<RectTransform>());
         }
         else
         {
