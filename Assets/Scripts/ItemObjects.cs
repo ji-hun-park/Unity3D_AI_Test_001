@@ -16,6 +16,8 @@ public class ItemObjects : MonoBehaviour
         {
             originalMaterial = objectRenderer.material;
         }
+        
+        GameManager.Instance.ItemList.Add(ItemName);
     }
 
     void OnCollisionEnter(Collision collision)

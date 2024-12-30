@@ -8,6 +8,14 @@ public class AlertUI : MonoBehaviour
     public void OnClickYesButton()
     {
         Debug.Log("Yes");
+        if (CurrentItemObject == GameManager.Instance.answerItem)
+        {
+            GameManager.Instance.clearFlag = true;
+        }
+        else
+        {
+            GameManager.Instance.failFlag = true;
+        }
         gameObject.SetActive(false);
     }
     
