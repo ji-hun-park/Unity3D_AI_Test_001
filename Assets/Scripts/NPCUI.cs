@@ -34,12 +34,13 @@ public class NPCUI : MonoBehaviour
     
     public void OnClickBackButton()
     {
+        Time.timeScale = 1;
         gameObject.SetActive(false);
     }
 
     public void OnClickHistoryButton()
     {
-        Debug.Log("OnClickHistoryButton");
+        UIManager.Instance.UIList[3].gameObject.SetActive(true);
     }
     
     public void OnClickQNAButton()

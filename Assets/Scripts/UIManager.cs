@@ -35,6 +35,8 @@ public class UIManager : MonoBehaviour
             FindAlertUI();
             FindNPCUI();
             FindQuestionUI();
+            FindScrollUI();
+            FindOverUI();
         }
     }
 
@@ -73,6 +75,36 @@ public class UIManager : MonoBehaviour
     private void FindQuestionUI()
     {
         Transform target = FindChildByName(canvas.transform, "QuestionUI");
+
+        if (target != null)
+        {
+            Debug.Log("찾은 오브젝트: " + target.name);
+            UIList.Add(target.GetComponent<RectTransform>());
+        }
+        else
+        {
+            Debug.Log("오브젝트를 찾을 수 없습니다.");
+        }
+    }
+
+    private void FindScrollUI()
+    {
+        Transform target = FindChildByName(canvas.transform, "ScrollUI");
+
+        if (target != null)
+        {
+            Debug.Log("찾은 오브젝트: " + target.name);
+            UIList.Add(target.GetComponent<RectTransform>());
+        }
+        else
+        {
+            Debug.Log("오브젝트를 찾을 수 없습니다.");
+        }
+    }
+    
+    private void FindOverUI()
+    {
+        Transform target = FindChildByName(canvas.transform, "OverUI");
 
         if (target != null)
         {

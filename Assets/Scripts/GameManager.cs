@@ -87,7 +87,9 @@ public class GameManager : MonoBehaviour
     
     private void HandleFlagTrue()
     {
-        Debug.Log("Flag가 true로 변경되었습니다!");
+        Debug.Log("GameClear");
+        Time.timeScale = 0;
+        UIManager.Instance.UIList[4].gameObject.SetActive(true);    
     }
 
     void OnDestroy()
@@ -104,5 +106,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("GameOver");
+        Time.timeScale = 0;
+        UIManager.Instance.UIList[4].gameObject.SetActive(true);
     }
 }

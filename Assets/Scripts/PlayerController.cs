@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Box"))
         {
-            if (Input.GetKeyDown(GameManager.Instance.interactKey))
+            if (Input.GetKey(GameManager.Instance.interactKey))
             {
                 Debug.Log("interact with box");
                 UIManager.Instance.altUI.currentItemObject = other.gameObject.GetComponent<ItemObjects>().itemName;
@@ -33,9 +33,10 @@ public class PlayerController : MonoBehaviour
         
         if (other.gameObject.CompareTag("NPC"))
         {
-            if (Input.GetKeyDown(GameManager.Instance.interactKey))
+            if (Input.GetKey(GameManager.Instance.interactKey))
             {
                 Debug.Log("interact with npc");
+                Time.timeScale = 0;
                 UIManager.Instance.UIList[1].gameObject.SetActive(true);
             }
         }
