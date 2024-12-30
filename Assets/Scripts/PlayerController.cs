@@ -7,9 +7,15 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Collider collider = collision.collider;
+        
         if (collider.CompareTag("Box"))
         {
             Debug.Log("BOX!");
+        }
+        
+        if (collider.CompareTag("NPC"))
+        {
+            Debug.Log("NPC!");
         }
     }
 
@@ -19,9 +25,18 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(GameManager.Instance.interactKey))
             {
-                Debug.Log("interact");
-                UIManager.Instance.AltUI.currentItemObject = other.gameObject.GetComponent<ItemObjects>().itemName;
+                Debug.Log("interact with box");
+                UIManager.Instance.altUI.currentItemObject = other.gameObject.GetComponent<ItemObjects>().itemName;
                 UIManager.Instance.UIList[0].gameObject.SetActive(true);
+            }
+        }
+        
+        if (other.gameObject.CompareTag("NPC"))
+        {
+            if (Input.GetKeyDown(GameManager.Instance.interactKey))
+            {
+                Debug.Log("interact with npc");
+                UIManager.Instance.UIList[1].gameObject.SetActive(true);
             }
         }
     }

@@ -15,6 +15,8 @@ public class LLMAPIManager : MonoBehaviour
     
     public string promptMessage = null;
     public string apiResponse = null;
+    public List<string> messageList = new List<string>();
+    public bool isCatch;
     private int maxToken;
     private string apiUrl = null;
     private string apiKey = null;
@@ -98,7 +100,10 @@ public class LLMAPIManager : MonoBehaviour
         if (modelResponse != null)
         {
             Debug.Log("Model Response: " + modelResponse);
+            isCatch = true;
+            messageList.Add(modelResponse);
             apiResponse = modelResponse;
+            UIManager.Instance.npcUI.RefreshText();
         }
         else
         {

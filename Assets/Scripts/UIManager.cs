@@ -11,7 +11,8 @@ public class UIManager : MonoBehaviour
     public List<RectTransform> UIList = new List<RectTransform>();
     
     [Header("Scripts")]
-    public AlertUI AltUI;
+    public AlertUI altUI;
+    public NPCUI npcUI;
     void Awake()
     {
         // Instance 존재 유무에 따라 게임 매니저 파괴 여부 정함
@@ -45,7 +46,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("찾은 오브젝트: " + target.name);
             UIList.Add(target.GetComponent<RectTransform>());
-            AltUI = target.GetComponent<AlertUI>();
+            altUI = target.GetComponent<AlertUI>();
         }
         else
         {
@@ -61,6 +62,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("찾은 오브젝트: " + target.name);
             UIList.Add(target.GetComponent<RectTransform>());
+            npcUI = target.GetComponent<NPCUI>();
         }
         else
         {
@@ -83,7 +85,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    Transform FindChildByName(Transform parent, string name)
+    public Transform FindChildByName(Transform parent, string name)
     {
         foreach (Transform child in parent)
         {
