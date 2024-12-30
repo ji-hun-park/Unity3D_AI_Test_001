@@ -1,10 +1,13 @@
 using UnityEngine;
 
-public class ObjectOutline : MonoBehaviour
+public class ItemObjects : MonoBehaviour
 {
     public Material outlineMaterial;  // 녹색 테두리 Material
     private Material originalMaterial; // 원래 Material
     private Renderer objectRenderer;
+
+    [SerializeField] private string ItemName;
+    public string itemName {get => ItemName; set => ItemName = value;}
 
     void Start()
     {

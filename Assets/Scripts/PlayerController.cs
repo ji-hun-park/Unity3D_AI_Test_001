@@ -17,9 +17,11 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Box"))
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(GameManager.Instance.interactKey))
             {
-                Debug.Log("F");
+                Debug.Log("interact");
+                UIManager.Instance.AltUI.currentItemObject = other.gameObject.GetComponent<ItemObjects>().itemName;
+                UIManager.Instance.UIList[0].gameObject.SetActive(true);
             }
         }
     }
