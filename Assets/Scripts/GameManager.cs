@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     
     public int qnaCount;
     
-    [SerializeField] private Transform player;
+    public Transform player;
     public KeyCode interactKey;
 
     [SerializeField] private string AnswerItem;
