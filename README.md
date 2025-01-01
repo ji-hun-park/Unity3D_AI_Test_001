@@ -1,4 +1,4 @@
-# Unity3DTest001
+# Unity3D_AI_Test_001
 
 ## 유니티 버전
 Unity 6 (6000.0.30f1) LTS
