@@ -14,4 +14,8 @@ Unity 6 (6000.0.30f1) LTS
 7. 올바른 사물을 고르면 게임 클리어입니다.   
 
 ## 클론 시 추가할 파일
-제미나이 1.5 플래쉬 API KEY를 담은 config.json 파일을 스트리밍에셋 폴더에 추가할 것
+제미나이 1.5 플래쉬 API KEY를 담은 config.json 파일을 스트리밍에셋 폴더에 추가할 것   
+config.json 내용
+{
+    "apiKey": "YOUR_API_KEY"
+}
