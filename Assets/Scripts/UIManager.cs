@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     [Header("Scripts")]
     public AlertUI altUI;
     public NPCUI npcUI;
+    public ScrollUI scrollUI;
     void Awake()
     {
         // Instance 존재 유무에 따라 게임 매니저 파괴 여부 정함
@@ -95,6 +96,7 @@ public class UIManager : MonoBehaviour
         {
             Debug.Log("찾은 오브젝트: " + target.name);
             UIList.Add(target.GetComponent<RectTransform>());
+            scrollUI = target.GetComponent<ScrollUI>();
         }
         else
         {

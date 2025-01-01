@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject); // 기존에 존재하면 자신파괴
         }
 
-        qnaCount = 10;
+        qnaCount = 5;
         interactKey = KeyCode.F;
     }
 
@@ -100,6 +100,11 @@ public class GameManager : MonoBehaviour
     private IEnumerator InitializationAnswerWord()
     {
         yield return new WaitForSeconds(0.1f);
+        InitAnswerItem();
+    }
+
+    public void InitAnswerItem()
+    {
         answerItem = ItemList[Random.Range(0, ItemList.Count)];
     }
 

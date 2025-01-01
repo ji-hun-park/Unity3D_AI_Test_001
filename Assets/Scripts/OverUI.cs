@@ -33,6 +33,12 @@ public class OverUI : MonoBehaviour
         Debug.Log("Game Restart");
         Time.timeScale = 1;
         gameObject.SetActive(false);
+        GameManager.Instance.qnaCount = 5;
+        GameManager.Instance.clearFlag = false;
+        GameManager.Instance.failFlag = false;
+        GameManager.Instance.InitAnswerItem();
+        LLMAPIManager.Instance.messageList.Clear();
+        UIManager.Instance.scrollUI.RefreshScrollView();
     }
     
     public void OnClickEndButton()
